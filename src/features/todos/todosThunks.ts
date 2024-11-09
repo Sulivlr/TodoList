@@ -21,3 +21,7 @@ export const fetchTodoThunk = createAsyncThunk<Todo[]>('todos/fetch', async () =
 export const changeTodoStatus = createAsyncThunk<void, ChangeTodoStatus>('todos/change', async ({id,isDone}) => {
   await axiosApi.patch(`/todos/${id}.json`, {isDone});
 });
+
+export const deleteTodoThunk = createAsyncThunk<void, string>('todo/remove', async (id) => {
+  await axiosApi.delete(`/todos/${id}.json`);
+});
