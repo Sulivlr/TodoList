@@ -40,7 +40,7 @@ export const todosSlice = createSlice({
       state.isRemoving = null;
     }).addCase(deleteTodoThunk.rejected, (state) => {
       state.isRemoving = null;
-    })
+    });
   },
   selectors: {
     selectIsCreating: (state) => state.isCreating,

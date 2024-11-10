@@ -46,11 +46,12 @@ const Todos = () => {
                 onChange={event => onChangeStatus(todo.id, event.target.checked)}
               />
               <button
-                className="btn btn-close btn-outline-danger"
-                style={{width: '50px', height: '50px'}}
+                className="btn btn-danger"
                 onClick={() => onRemove(todo.id)}
+                disabled={isRemoving === todo.id}
               >
-                {isRemoving && <ButtonSpinner/>}
+                {isRemoving === todo.id && <ButtonSpinner/>}
+                Delete
               </button>
             </div>
           </div>
